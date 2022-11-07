@@ -1,9 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Button from './components/Button'
+import RegisterForm from './components/RegisterForm'
+import 'normalize.css'
+import './assets/styles.module.scss'
+import TodoList from './components/TodoList'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Button />
+    <TodoList />
   </React.StrictMode>
 )
