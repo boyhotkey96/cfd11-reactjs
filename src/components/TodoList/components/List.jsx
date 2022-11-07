@@ -39,10 +39,19 @@ function List({ todoList, handleAdd, handleUpdateCompleted, handleUpdateEdit }) 
     const [job, setJob] = useState("");
 
     const todoListCompleted = todoList.filter((e) => e.completed);
+    todoListCompleted.sort(compareCount)
     const todoList2 = todoList.filter((e) => !e.completed);
 
+    function compareCount(a, b) {
+        const countA = a.count
+        const countB = b.count
+
+        let compair = 0
+        return countA > countB ? compair = -1 : compair = 1
+    }
+
     const handleAddJob = (e) => {
-        handleAdd?.(job);
+        handleAdd?.(job.trim());
         setJob("");
         jobRef.current.focus();
     };
@@ -72,7 +81,7 @@ function List({ todoList, handleAdd, handleUpdateCompleted, handleUpdateEdit }) 
                     value={job}
                     onChange={(e) => setJob(e.target.value)}
                 />
-                <button className="btn-add" disabled={!job} onClick={handleAddJob}>
+                <button className="btn-add" disabled={!job.trim()} onClick={handleAddJob}>
                     Thêm
                 </button>
             </div>

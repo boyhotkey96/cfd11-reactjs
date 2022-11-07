@@ -27,6 +27,10 @@ const TodoItemRoot = styled.div`
     text-decoration: line-through;
     button {
       display: none;
+      &:disable {
+        background-color: #f7f7f7;
+        cursor: no-drop;
+      }
     }
   }
   .input {
@@ -48,36 +52,42 @@ function Item({ id, content, completed, handleCompleted, handleEdit }) {
     const handleCheck = (id) => {
         handleCompleted?.(id);
     };
-    
+
     const handleCheckEdit = (id) => {
         divRef.current.style.display = "none"
         inputRed.current.style.display = 'block'
+        inputRed.current.value = inputRed.current.value.trim()
 
         editRef.current.style.display = "none"
         okRef.current.style.display = 'flex'
 
         inputRed.current.focus()
     };
-    
+
     const handleOk = (id, job) => {
         editRef.current.style.display = "flex"
         okRef.current.style.display = 'none'
 
         divRef.current.style.display = "block"
         inputRed.current.style.display = 'none'
-
-        handleEdit?.(id, job);
+        handleEdit?.(id, job.trim());
     };
+
+    const handleOnKeyUpAdd = (event) => {
+        if (event.key === "Enter") {
+            handleOk(id, job)
+        }
+    }
 
     return (
         <TodoItemRoot className={completed ? "isCompleted" : ""}>
             <div ref={divRef} className="name">
                 {content}
             </div>
-            <input ref={inputRed} className="input" value={job} onChange={e => setJob(e.target.value)} />
+            <input ref={inputRed} className="input" value={job} onChange={e => setJob(e.target.value)} onKeyUp={handleOnKeyUpAdd} />
             {completed ? null : (
                 <>
-                    <button ref={okRef} className="none" onClick={handleOk.bind(null, id, job)}>OK</button>
+                    <button ref={okRef} className="none" disabled={!job.trim()} onClick={handleOk.bind(null, id, job)}>OK</button>
                     <button ref={editRef} onClick={handleCheckEdit.bind(null, id)}>Edit</button>
                     <button onClick={handleCheck.bind(null, id)}>{completed}✓</button>
                 </>

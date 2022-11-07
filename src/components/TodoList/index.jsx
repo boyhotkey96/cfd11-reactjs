@@ -1,10 +1,19 @@
 import { useEffect, useState } from "react";
 import List from "./components/List";
 
+let num = 0;
 function TodoList() {
     const [todoList, setTodoList] = useState(() => {
-        const todoListStorage = localStorage.getItem("cfd11-todolist");
-        return todoListStorage ? JSON.parse(todoListStorage) : [];
+        const todoListStorage = JSON.parse(localStorage.getItem("cfd11-todolist"));
+
+        if (todoListStorage) {
+            const completedFilter = todoListStorage.filter(e => e.completed)
+            const countMax = Math.max(...completedFilter.map(item => item.count))
+            countMax === null ? 0 : countMax
+            num = countMax
+        }
+
+        return todoListStorage ? todoListStorage : [];
     });
 
     const handleAdd = (job) => {
@@ -20,14 +29,15 @@ function TodoList() {
         const task = todoList.find((todo) => todo.id === id);
         if (task) {
             task.completed = true;
+            task.count = ++num;
         }
         setTodoList([...todoList]);
     };
 
-    const handleUpdateEdit = (id, x) => {
+    const handleUpdateEdit = (id, job) => {
         const task = todoList.find((todo) => todo.id === id);
         if (task) {
-            task.content = x
+            task.content = job
         }
         setTodoList([...todoList]);
     }
