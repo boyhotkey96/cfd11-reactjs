@@ -96,7 +96,7 @@ function List({ todoList, handleAdd, handleUpdateCompleted, handleUpdateEdit }) 
                 <div className="card">
                     <h2>Việc đã làm</h2>
                     {todoListCompleted.map((todo) => (
-                        <Item key={todo.id} {...todo} handleEdit={handleEdit} handleCompleted={handleCompleted} />
+                        <Item key={todo.id} {...todo} handleEdit={handleEdit} />
                     ))}
                 </div>
             </div>
