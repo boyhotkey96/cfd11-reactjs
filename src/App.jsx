@@ -6,7 +6,7 @@ import {
 import MainLayout from "./layouts/MainLayout";
 import ProfileLayout from "./layouts/ProfileLayout";
 import Home from "./pages";
-import Page404 from "./pages/404";
+import Page404 from "./pages/Page404";
 import Profile from "./pages/ca-nhan";
 import MyProject from "./pages/ca-nhan/du-an";
 import MyCourse from "./pages/ca-nhan/khoa-hoc";

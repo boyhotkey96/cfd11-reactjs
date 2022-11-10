@@ -1,9 +1,14 @@
-function Course({ teacher, title, thumbnailUrl, short_description }) {
+import { generatePath, Link } from "react-router-dom";
+import { COURSE_DETAIL } from "../config/path";
+
+function Course({ id, teacher, title, thumbnailUrl, short_description, slug }) {
+    const path = generatePath(COURSE_DETAIL, {slug, id})
+    console.log(path)
 
     return (
         <div className="col-md-4 course">
             <div className="wrap">
-                <a className="cover" href="#">
+                <Link className="cover" to={path}>
                     <img src={thumbnailUrl} alt="images" />
                     <span className="badge b1">Đã kết thúc</span>
                     <div className="hover">
@@ -20,11 +25,11 @@ function Course({ teacher, title, thumbnailUrl, short_description }) {
                             <img src="img/icon-viewmore.svg" alt="" />
                         </div>
                     </div>
-                </a>
+                </Link>
                 <div className="info">
-                    <a className="name" href="#">
+                    <Link className="name" to={path}>
                         {title}
-                    </a>
+                    </Link>
                     <p className="des">{short_description}</p>
                 </div>
                 <div className="bottom">

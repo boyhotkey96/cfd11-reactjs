@@ -1,28 +1,35 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Course from "../components/Course";
-import api from "../config/api";
+import useQuery from '../hooks/useQuery';
 import courseService from "../services/courseService";
 
 function Home() {
-    const [data, setData] = useState([]);
-    
+    const { data, loading } = useQuery(() => courseService.getCourse(), [])
+
     useEffect(() => {
         // Using fetch api
-        // fetch("http://cfd-reactjs.herokuapp.com/elearning/v4/courses")
-        // .then((response) => response.json())
-        // .then((response) => {
-        //     console.log(response);
-        //     const { data } = response;
-        //     setData(data);
-        //     return response;
-        // });
+        /* fetch("http://cfd-reactjs.herokuapp.com/elearning/v4/courses")
+        .then((response) => response.json())
+        .then((response) => {
+            console.log(response);
+            const { data } = response;
+            setData(data);
+            return response;
+        }); */
 
         // Using Axios api
-        courseService.getCourse()
+        /* courseService
+            .getCourse()
             .then((response) => {
                 console.log(response);
                 setData(response.data);
-            });
+            })
+            .catch((error) => {
+                setEror(error);
+            })
+            .finally(() => {
+                setLoading(false);
+            }); */
     }, []);
 
     return (
@@ -53,9 +60,11 @@ function Home() {
                         <h2 className="main-title">Khóa học Offline</h2>
                     </div>
                     <div className="list row">
-                        {data.map((course) => (
-                            <Course key={course.id} {...course} />
-                        ))}
+                        {loading ? (
+                            <p>Đang tải dữ liệu!</p>
+                        ) : (
+                            data.map((course) => <Course key={course.id} {...course} />)
+                        )}
                     </div>
                 </div>
             </section>
