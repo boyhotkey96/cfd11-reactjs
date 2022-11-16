@@ -1,15 +1,19 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { PROFILE_COURSE_PATH, PROFILE_PATH } from "../config/path";
+import { useAuth } from "../hooks/useAuth";
 
 function Header() {
-    const [login, setLogin] = useState(true);
+    // const [login, setLogin] = useState(true);
     const navigate = useNavigate();
 
-    const handleLogout = (e) => {
-        e.preventDefault();
-        setLogin(false);
-        navigate("/");
-    };
+    // const handleLogout = (e) => {
+    //     e.preventDefault();
+    //     setLogin(false);
+    //     navigate("/");
+    // };
+
+    const {user, handleLogin, handleLogout} = useAuth()
+    console.log(user)
 
     return (
         <>
@@ -23,35 +27,35 @@ function Header() {
                         </div>
                         <span className="text">menu</span>
                     </div>
-                    <a href="#" className="logo">
+                    <Link to="/" className="logo">
                         <img src="img/logo.svg" alt="" />
                         <h1>CFD</h1>
-                    </a>
+                    </Link>
                     <div className="right">
-                        {login ? (
+                        {user ? (
                             <div className="have-login">
                                 <div className="account">
                                     <a href="#" className="info">
-                                        <div className="name">Trần Lê Trọng Nghĩa</div>
+                                        <div className="name">{user.name}</div>
                                         <div className="avatar">
-                                            <img src="img/avt.png" alt="" />
+                                            <img src={user.avatar} alt="avatar" />
                                         </div>
                                     </a>
                                 </div>
                                 <div className="hamberger"></div>
                                 <div className="sub">
-                                    <a href="#">Khóa học của tôi</a>
-                                    <a href="#">Thông tin tài khoản</a>
-                                    <a href="#" onClick={handleLogout}>
+                                    <Link to={PROFILE_COURSE_PATH}>Khóa học của tôi</Link>
+                                    <Link to={PROFILE_PATH}>Thông tin tài khoản</Link>
+                                    <Link to='/' onClick={handleLogout}>
                                         Đăng xuất
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         ) : (
                             <div class="not-login bg-none">
-                                <a href="#" class="btn-register">
+                                <Link to={PROFILE_PATH} class="btn-register" onClick={handleLogin}>
                                     Đăng nhập
-                                </a>
+                                </Link>
                                 <a href="login.html" class="btn main btn-open-login">
                                     Đăng ký
                                 </a>

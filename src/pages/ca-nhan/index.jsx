@@ -6,7 +6,7 @@ function Profile() {
 
     return (
         <div className="tab1">
-            {!login || <Navigate to='/' />}
+            {login || <Navigate to='/' />}
             <label>
                 <p>Họ và tên<span>*</span></p>
                 <input type="text" placeholder="Nguyễn Văn A" />

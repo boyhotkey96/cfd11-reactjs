@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Navigate, NavLink, Outlet } from "react-router-dom";
 import {
     PROFILE_COIN_PATH,
     PROFILE_COURSE_PATH,
@@ -6,18 +6,24 @@ import {
     PROFILE_PAYMENT_PATH,
     PROFILE_PROJECT_PATH
 } from "../config/path";
+import { useAuth } from "../hooks/useAuth";
 
 function ProfileLayout() {
+    const { user } = useAuth()
+    console.log(user)
+
+    if (!user) return <Navigate to="/" />
+
     return (
         <main className="profile" id="main">
             <section>
                 <div className="top-info">
                     <div className="avatar">
                         {/* <span class="text">H</span> */}
-                        <img src="img/avatar-lg.png" alt="" />
+                        <img src={user.avatar} alt="avatar" />
                         <div className="camera" />
                     </div>
-                    <div className="name">trần nghĩa</div>
+                    <div className="name">{user.name}</div>
                     <p className="des">Thành viên của team CFD1-OFFLINE</p>
                 </div>
                 <div className="container">
