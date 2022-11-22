@@ -5,9 +5,10 @@ import authService from "../services/authService";
 import userService from "../services/userService";
 
 function LoginModal() {
-    const { isOpenLoginModal, setIsOpenLoginModal, setUser } = usePage();
+    const { isOpenLoginModal, setIsOpenLoginModal, setUser } = usePage()
     const [form, setForm] = useState({});
     const [error, setError] = useState();
+    // state: prevent pressing the button repeatedly
     const [isFetching, setIsFetching] = useState(false);
 
     const handleSubmitLogin = async () => {
@@ -17,7 +18,7 @@ function LoginModal() {
             const resData = await res.data;
             if (resData) {
                 localStorage.setItem("token", JSON.stringify(resData));
-                
+
                 const user = await userService.getInfo()
                 const data = await user.data
                 // const {data} = await user.data

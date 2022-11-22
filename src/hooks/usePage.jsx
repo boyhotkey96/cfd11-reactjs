@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import userService from "../services/userService";
 
-const Context = createContext();
+export const Context = createContext();
 
 export const PageProvider = ({ children }) => {
     const [isOpenLoginModal, setIsOpenLoginModal] = useState(false);
@@ -11,6 +11,7 @@ export const PageProvider = ({ children }) => {
     })
 
     useEffect(() => {
+        // page reload is user updated when backend update
         (async () => {
             const token = localStorage.getItem('token')
             if (token) {

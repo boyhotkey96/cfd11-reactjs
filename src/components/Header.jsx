@@ -54,7 +54,7 @@ function Header() {
                             <div className="have-login">
                                 <div className="account">
                                     <a href="#" className="info">
-                                        <div className="name">{user.name || 'Phùng Bá Dự'}</div>
+                                        <div className="name">{user.email || 'Phùng Bá Dự'}</div>
                                         <div className="avatar">
                                             <img src={user.avatar || 'https://scontent.fsgn8-4.fna.fbcdn.net/v/t1.6435-9/103836261_147730343534712_4650762923682418704_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=7rSqyM2sd1YAX_E7akm&_nc_ht=scontent.fsgn8-4.fna&oh=00_AfDZ2LOiS1UUSilTHY0U_TzeDdPPvG62uJ4SYhQKDucxzQ&oe=63A38CE9'} alt="avatar" />
                                         </div>
