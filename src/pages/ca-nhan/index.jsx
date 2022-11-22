@@ -2,11 +2,11 @@ import { useState } from 'react'
 import { Navigate } from 'react-router-dom'
 
 function Profile() {
-    const [login, setLogin] = useState(true)
+    // const [login, setLogin] = useState(true)
 
     return (
         <div className="tab1">
-            {login || <Navigate to='/' />}
+            {/* {login || <Navigate to='/' />} */}
             <label>
                 <p>Họ và tên<span>*</span></p>
                 <input type="text" placeholder="Nguyễn Văn A" />
