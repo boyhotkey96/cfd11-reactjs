@@ -5,7 +5,7 @@ function MyProject() {
                 <div className="col-md-6 course">
                     <div className="wrap">
                         <a href="#" className="cover">
-                            <img src="img/img8.png" alt="" />
+                            <img src="/img/img8.png" alt="" />
                         </a>
                         <div className="info">
                             <a href="#" className="name">
@@ -18,7 +18,7 @@ function MyProject() {
                         <div className="bottom">
                             <div className="teacher">
                                 <div className="avatar">
-                                    <img src="img/avt.png" alt="" />
+                                    <img src="/img/avt.png" alt="" />
                                 </div>
                                 <div className="name">Trần Nghĩa</div>
                             </div>
@@ -29,7 +29,7 @@ function MyProject() {
                 <div className="col-md-6 course">
                     <div className="wrap">
                         <a href="#" className="cover">
-                            <img src="img/img8.png" alt="" />
+                            <img src="/img/img8.png" alt="" />
                         </a>
                         <div className="info">
                             <a href="#" className="name">
@@ -42,7 +42,7 @@ function MyProject() {
                         <div className="bottom">
                             <div className="teacher">
                                 <div className="avatar">
-                                    <img src="img/avt.png" alt="" />
+                                    <img src="/img/avt.png" alt="" />
                                 </div>
                                 <div className="name">Trần Nghĩa</div>
                             </div>
@@ -53,7 +53,7 @@ function MyProject() {
             </div>
             <div className="btn-wrap">
                 <div className="btn overlay btn-icon round">
-                    <img src="img/icon-upload.svg" alt="" /> Tải lên
+                    <img src="/img/icon-upload.svg" alt="" /> Tải lên
                 </div>
             </div>
         </div>

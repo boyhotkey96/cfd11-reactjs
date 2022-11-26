@@ -6,7 +6,6 @@ import {
     PROFILE_PAYMENT_PATH,
     PROFILE_PROJECT_PATH
 } from "../config/path";
-import { useAuth } from "../hooks/useAuth";
 import { usePage } from "../hooks/usePage";
 
 function ProfileLayout() {

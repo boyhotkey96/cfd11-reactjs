@@ -5,7 +5,7 @@ function MyCourse() {
         <div className="tab2">
             <div className="item">
                 <div className="cover">
-                    <img src="img/img3.png" alt="" />
+                    <img src="/img/img3.png" alt="" />
                 </div>
                 <div className="info">
                     <a href="#" className="name">
@@ -14,13 +14,13 @@ function MyCourse() {
                     <div className="date">Khai giảng ngày 09/09/2019</div>
                     <div className="row">
                         <div className>
-                            <img src="img/clock.svg" alt="" className="icon" />54 giờ
+                            <img src="/img/clock.svg" alt="" className="icon" />54 giờ
                         </div>
                         <div className>
-                            <img src="img/play.svg" alt="" className="icon" />25 video
+                            <img src="/img/play.svg" alt="" className="icon" />25 video
                         </div>
                         <div className>
-                            <img src="img/user.svg" alt="" className="icon" />20 học viên
+                            <img src="/img/user.svg" alt="" className="icon" />20 học viên
                         </div>
                     </div>
                     <div className="process">
@@ -36,7 +36,7 @@ function MyCourse() {
             </div>
             <div className="item">
                 <div className="cover">
-                    <img src="img/img7.png" alt="" />
+                    <img src="/img/img7.png" alt="" />
                 </div>
                 <div className="info">
                     <a href="#" className="name">
@@ -45,13 +45,13 @@ function MyCourse() {
                     <div className="date">Khai giảng ngày 09/09/2019</div>
                     <div className="row">
                         <div className>
-                            <img src="img/clock.svg" alt="" className="icon" />54 giờ
+                            <img src="/img/clock.svg" alt="" className="icon" />54 giờ
                         </div>
                         <div className>
-                            <img src="img/play.svg" alt="" className="icon" />25 video
+                            <img src="/img/play.svg" alt="" className="icon" />25 video
                         </div>
                         <div className>
-                            <img src="img/user.svg" alt="" className="icon" />20 học viên
+                            <img src="/img/user.svg" alt="" className="icon" />20 học viên
                         </div>
                     </div>
                     <div className="process">
