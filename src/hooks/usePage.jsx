@@ -16,7 +16,8 @@ export const PageProvider = ({ children }) => {
             const token = localStorage.getItem('token')
             if (token) {
                 const user = await userService.getInfo()
-                localStorage.setItem('user', JSON.stringify(user))
+                const data = user.data
+                localStorage.setItem('user', JSON.stringify(data))
                 setUser(user.data)
             }
         })()
