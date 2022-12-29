@@ -5,7 +5,6 @@ function Profile() {
     // const [login, setLogin] = useState(true)
     const { user } = usePage();
     const phoneRef = useRef();
-
     return (
         <div className="tab1">
             {/* {login || <Navigate to='/' />} */}

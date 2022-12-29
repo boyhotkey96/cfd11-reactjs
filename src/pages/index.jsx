@@ -5,6 +5,7 @@ import courseService from "../services/courseService";
 
 function Home() {
     const { data, loading } = useQuery(() => courseService.getCourse(), [])
+    console.log(data)
 
     useEffect(() => {
         // Using fetch api
