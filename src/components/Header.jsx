@@ -139,7 +139,7 @@ function Header() {
               <div className="have-login">
                 <div className="account">
                   <a href="#" className="info">
-                    <div className="name">{user.email || "Phùng Bá Dự"}</div>
+                    <div className="name">{user.username || "Member"}</div>
                     <div className="avatar">
                       <img
                         src={
