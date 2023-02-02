@@ -131,7 +131,7 @@ function Header() {
             <span className="text">menu</span>
           </div>
           <Link to="/" className="logo">
-            <img src="img/logo.svg" alt="" />
+            <img src="/img/logo.svg" alt="" />
             <h1>CFD</h1>
           </Link>
           <div className="right">
@@ -144,7 +144,7 @@ function Header() {
                       <img
                         src={
                           user.avatar ||
-                          "../../public/img/upload/avatar.jpg"
+                          "/img/upload/avatar.jpg"
                         }
                         alt="avatar"
                       />
