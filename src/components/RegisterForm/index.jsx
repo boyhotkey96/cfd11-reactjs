@@ -105,7 +105,7 @@ function RegisterForm() {
                     <span>{error.password}</span>
                 )}
             </Div>
-            <ButtonS onClick={onHandleSubmit}>Submit</ButtonS>
+            <Buttons onClick={onHandleSubmit}>Submit</Buttons>
         </form>
     );
 }

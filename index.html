@@ -15,8 +15,31 @@
   </head>
   <body>
     <div id="root"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
     <script type="module" src="/src/main.jsx"></script>
     <!-- JavaScript -->
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <!-- Không thể sử dụng script -->
+    <!-- <script type="text/javascript">
+      let elmVideo = document.querySelector(".videoif");
+      console.log(elmVideo);
+      alert('xin chào')
+
+      window.addEventListener("load", function () {
+        console.log("All assets are loaded");
+      });
+
+      elmVideo.onClick = function () {
+        console.log("test video");
+      };
+
+      $(".videoif").click(function () {
+        $(".btn-video-intro").fadeIn(200);
+        $("#video-intro")[0].contentWindow.postMessage(
+          '{"event":"command","func":"' + "pauseVideo" + '","args":""}',
+          "*"
+        );
+      });
+    </script> -->
   </body>
 </html>
